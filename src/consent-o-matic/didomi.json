@@ -59,24 +59,12 @@
                                     "description": "Share (everything) with others",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-share_whith_others" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-share_whith_others]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-share_whith_others" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-share_whith_others]:last-child"
                                         }
@@ -87,24 +75,12 @@
                                     "description": "Information storage and access",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-cookies" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-cookies]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-cookies" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-cookies]:last-child"
                                         }
@@ -115,24 +91,12 @@
                                     "description": "Content selection, offers and marketing",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-CL-T1Rgm7" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-CL-T1Rgm7]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-CL-T1Rgm7" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-CL-T1Rgm7]:last-child"
                                         }
@@ -143,24 +107,12 @@
                                     "description": "Analytics",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-analytics" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-analytics]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-analytics" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-analytics]:last-child"
                                         }
@@ -171,24 +123,12 @@
                                     "description": "Analytics",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-M9NRHJe3G" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-M9NRHJe3G]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-M9NRHJe3G" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-M9NRHJe3G]:last-child"
                                         }
@@ -199,24 +139,12 @@
                                     "description": "Ad and content selection",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-advertising_personalization" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-advertising_personalization]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-advertising_personalization" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-advertising_personalization]:last-child"
                                         }
@@ -239,12 +167,6 @@
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-pub-ciblee" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-pub-ciblee]:last-child"
                                         }
@@ -255,24 +177,12 @@
                                     "description": "Ad and content selection - basics",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-q4zlJqdcD" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-q4zlJqdcD]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-q4zlJqdcD" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-q4zlJqdcD]:last-child"
                                         }
@@ -283,24 +193,12 @@
                                     "description": "Ad and content selection - partners and subsidiaries",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-partenaire-cAsDe8jC" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-partenaire-cAsDe8jC]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-partenaire-cAsDe8jC" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-partenaire-cAsDe8jC]:last-child"
                                         }
@@ -311,24 +209,12 @@
                                     "description": "Ad and content selection - social networks",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-p4em9a8m" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-p4em9a8m]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-p4em9a8m" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-p4em9a8m]:last-child"
                                         }
@@ -339,24 +225,12 @@
                                     "description": "Ad and content selection - others",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-autres-pub" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-autres-pub]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-autres-pub" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-autres-pub]:last-child"
                                         }
@@ -367,24 +241,12 @@
                                     "description": "Social networks",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-reseauxsociaux" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-reseauxsociaux]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-reseauxsociaux" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-reseauxsociaux]:last-child"
                                         }
@@ -395,24 +257,12 @@
                                     "description": "Content selection",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-content_personalization" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-content_personalization]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-content_personalization" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-content_personalization]:last-child"
                                         }
@@ -423,24 +273,12 @@
                                     "description": "Ad delivery",
                                     "falseAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-ad_delivery" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-ad_delivery]:first-child"
                                         }
                                     },
                                     "trueAction": {
                                         "type": "click",
-                                        "parent": {
-                                            "selector": ".didomi-consent-popup-data-processing",
-                                            "childFilter": {
-                                                "target": { "selector": "#didomi-purpose-ad_delivery" }
-                                            }
-                                        },
                                         "target": {
                                             "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-ad_delivery]:last-child"
                                         }

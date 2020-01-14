@@ -2,7 +2,9 @@
   "name": "@edas/websanitization",
   "version": "1.0.0",
   "description": "Collection of scripts, rules and configurations to make the web more friendly.",
-  "scripts": {},
+  "scripts": {
+    "build": "mkdir -p dist ; node ./src/build.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/edas/web-sanitization.git"
