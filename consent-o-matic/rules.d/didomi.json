@@ -290,7 +290,7 @@
                                             }
                                         },
                                         "target": {
-                                            "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-partenaire-cAsDe8jC[aria-describedby=didomi-purpose-pub-ciblee]]:first-child"
+                                            "selector": ".didomi-components-radio__option[aria-describedby=didomi-purpose-partenaire-cAsDe8jC]:first-child"
                                         }
                                     },
                                     "trueAction": {
