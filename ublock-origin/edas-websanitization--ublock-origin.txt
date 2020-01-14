@@ -7,4 +7,4 @@
 ! GitHub issues: https://github.com/edas/web-sanitization/issues
 ! GitHub pull requests: https://github.com/edas/web-sanitization#readme
 !
-! Last updated: 2020-01-14T20:18:29.029Z
+! Last updated: 2020-01-14T20:35:19.144Z

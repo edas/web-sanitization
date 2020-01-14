@@ -34,7 +34,7 @@
                         {
                             "type": "waitcss",
                             "target": {
-                                "selector": "#didomi-purpose-cookies, .didomi-consent-popup-data-processing"
+                                "selector": "#didomi-purpose-cookies"
                             },
                             "retries": 50,
                             "waitTime": 50
