@@ -1,0 +1,22 @@
+{
+  "name": "@edas/websanitization",
+  "version": "1.0.0",
+  "description": "Collection of scripts, rules and configurations to make the web more friendly.",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edas/web-sanitization.git"
+  },
+  "author": {
+    "name": "Éric D.",
+    "url": "https://eric.daspet.name/"
+  },
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/edas/web-sanitization/issues"
+  },
+  "homepage": "https://github.com/edas/web-sanitization#readme",
+  "devDependencies": {
+    "jsonc": "^2.0.0"
+  }
+}
