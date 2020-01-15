@@ -1,0 +1,290 @@
+{
+  "trustarc.com (banner in host)": {
+    "detectors": [
+      {
+        "presentMatcher": {
+          "type": "css",
+          "target": {
+            "selector": "#truste-consent-track"
+          }
+        },
+        "showingMatcher": {
+          "type": "css",
+          "target": {
+            "selector": "#truste-consent-track"
+          }
+        }
+      }
+    ],
+    "methods": [
+      {
+        "name": "OPEN_OPTIONS",
+        "action": {
+          "type": "click",
+          "target": {
+            "selector": "#truste-show-consent"
+          }
+        }
+      }
+    ]
+  },
+  "trustarc.com (consent iframe)": {
+    "detectors": [
+      {
+        "presentMatcher": {
+          "type": "css",
+          "target": {
+            "selector": "#EuPreferenceManager\\.css",
+            "iframeFilter": true
+          }
+        },
+        "showingMatcher": {
+          "type": "css",
+          "target": {
+            "selector": "title",
+            "textFilter": "TrustArc Preference Manager",
+            "iframeFilter": true
+          }
+        }
+      }
+    ],
+    "methods": [
+      {
+        "name": "OPEN_OPTIONS",
+        "action": {
+          "type": "list",
+          "actions": [
+            {
+              "type": "waitcss",
+              "target": {
+                "selector": ".pdynamicbutton .shp, .prefPanel div[role=group]:first-child"
+              },
+              "retries": 100,
+              "waitTime": 50
+            },
+            {
+              "type": "ifcss",
+              "target": {
+                "selector": ".prefPanel div[role=group]"
+              },
+              "falseAction": {
+                "type": "list",
+                "actions": [
+                  {
+                    "type": "click",
+                    "parent": {
+                      "selector": ".mainContent",
+                      "childFilter": {
+                        "target": {
+                          "selector": ".consent"
+                        }
+                      }
+                    },
+                    "target": {
+                      "selector": ".pdynamicbutton .shp"
+                    }
+                  },
+                  {
+                    "type": "waitcss",
+                    "parent": {
+                      "selector": ".mainContent",
+                      "childFilter": {
+                        "target": {
+                          "selector": ".prefPanel"
+                        }
+                      }
+                    },
+                    "target": {
+                      "selector": ".pdynamicbutton .advance"
+                    },
+                    "retries": 100,
+                    "waitTime": 50
+                  },
+                  {
+                    "type": "click",
+                    "parent": {
+                      "selector": ".mainContent",
+                      "childFilter": {
+                        "target": {
+                          "selector": ".prefPanel"
+                        }
+                      }
+                    },
+                    "target": {
+                      "selector": ".pdynamicbutton .advance"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "DO_CONSENT",
+        "action": {
+          "type": "list",
+          "actions": [
+            {
+              "type": "waitcss",
+              "parent": {
+                "selector": ".prefPanel div[role=group]:last-child",
+                "childFilter": {
+                  "target": { "selector": ".cookiecat" }
+                }
+              },
+              "target": {
+                "selector": ".switch .off"
+              },
+              "retries": 100,
+              "waitTime": 50
+            },
+            {
+              "type": "foreach",
+              "target": {
+                "selector": ".prefPanel div[role=group][aria-label]",
+                "childFilter": {
+                  "target": { "selector": ".cookiecat" }
+                }
+              },
+              "action": {
+                "type": "consent",
+                "consents": [
+                  {
+                    "type": "X",
+                    "description": "Default selection in case of item not recognized later",
+                    "falseAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": ".switch .on"
+                      }
+                    },
+                    "trueAction": {
+                      "type": "click",
+                      "target": {
+                        "selector": ".switch .off"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "consent",
+              "consents": [
+                {
+                  "type": "B",
+                  "description": "Functional. Mesure and improve performance",
+                  "falseAction": {
+                    "type": "click",
+                    "parent": {
+                      "selector": ".prefPanel div[role=group][aria-label*=measure], .prefPanel div[role=group][aria-label*=analyser]",
+                      "childFilter": {
+                        "target": { "selector": ".cookiecat" }
+                      }
+                    },
+                    "target": {
+                      "selector": ".switch .on"
+                    }
+                  },
+                  "trueAction": {
+                    "type": "click",
+                    "parent": {
+                      "selector": ".prefPanel div[role=group][aria-label*=measure], .prefPanel div[role=group][aria-label*=analyser]",
+                      "childFilter": {
+                        "target": { "selector": ".cookiecat" }
+                      }
+                    },
+                    "target": {
+                      "selector": ".switch .off"
+                    }
+                  }
+                },
+                {
+                  "type": "F",
+                  "description": "Advertising Cookies. serve ads that are relevant to your interests.",
+                  "falseAction": {
+                    "type": "click",
+                    "parent": {
+                      "selector": ".prefPanel div[role=group][aria-label*=ads], .prefPanel div[role=group][aria-label*=publicitaires]",
+                      "childFilter": {
+                        "target": { "selector": ".cookiecat" }
+                      }
+                    },
+                    "target": {
+                      "selector": ".switch .on"
+                    }
+                  },
+                  "trueAction": {
+                    "type": "click",
+                    "parent": {
+                      "selector": ".prefPanel div[role=group][aria-label*=ads], .prefPanel div[role=group][aria-label*=publicitaires]",
+                      "childFilter": {
+                        "target": { "selector": ".cookiecat" }
+                      }
+                    },
+                    "target": {
+                      "selector": ".switch .off"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "SAVE_CONSENT",
+        "action": {
+          "type": "list",
+          "actions": [
+            {
+              "type": "click",
+              "parent": {
+                "selector": ".mainContent",
+                "childFilter": {
+                  "target": {
+                    "selector": ".prefPanel"
+                  }
+                }
+              },
+              "target": {
+                "selector": ".pdynamicbutton .submit"
+              }
+            },
+            {
+              "type": "waitcss",
+              "parent": {
+                "selector": ".mainContent",
+                "childFilter": {
+                  "target": {
+                    "selector": ".consentHeader"
+                  }
+                }
+              },
+              "target": {
+                "selector": ".pdynamicbutton .close"
+              },
+              "retries": 100,
+              "waitTime": 25
+            },
+            {
+              "type": "click",
+              "parent": {
+                "selector": ".mainContent",
+                "childFilter": {
+                  "target": {
+                    "selector": ".consentHeader"
+                  }
+                }
+              },
+              "target": {
+                "selector": ".pdynamicbutton .close"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
