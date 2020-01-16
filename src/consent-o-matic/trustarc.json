@@ -65,7 +65,8 @@
             {
               "type": "ifcss",
               "target": {
-                "selector": ".prefPanel div[role=group]"
+                "selector": ".prefPanel div[role=group]",
+                "displayFilter": true
               },
               "falseAction": {
                 "type": "list",
@@ -86,14 +87,6 @@
                   },
                   {
                     "type": "waitcss",
-                    "parent": {
-                      "selector": ".mainContent",
-                      "childFilter": {
-                        "target": {
-                          "selector": ".prefPanel"
-                        }
-                      }
-                    },
                     "target": {
                       "selector": ".pdynamicbutton .advance"
                     },
@@ -102,14 +95,6 @@
                   },
                   {
                     "type": "click",
-                    "parent": {
-                      "selector": ".mainContent",
-                      "childFilter": {
-                        "target": {
-                          "selector": ".prefPanel"
-                        }
-                      }
-                    },
                     "target": {
                       "selector": ".pdynamicbutton .advance"
                     }
@@ -240,28 +225,12 @@
           "actions": [
             {
               "type": "click",
-              "parent": {
-                "selector": ".mainContent",
-                "childFilter": {
-                  "target": {
-                    "selector": ".prefPanel"
-                  }
-                }
-              },
               "target": {
                 "selector": ".pdynamicbutton .submit"
               }
             },
             {
               "type": "waitcss",
-              "parent": {
-                "selector": ".mainContent",
-                "childFilter": {
-                  "target": {
-                    "selector": ".consentHeader"
-                  }
-                }
-              },
               "target": {
                 "selector": ".pdynamicbutton .close"
               },
@@ -270,14 +239,6 @@
             },
             {
               "type": "click",
-              "parent": {
-                "selector": ".mainContent",
-                "childFilter": {
-                  "target": {
-                    "selector": ".consentHeader"
-                  }
-                }
-              },
               "target": {
                 "selector": ".pdynamicbutton .close"
               }
