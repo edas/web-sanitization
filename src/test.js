@@ -113,7 +113,11 @@ function validConsentJSON(data, stack) {
   }
 
   function validTextFilter(data, stack) {
-    return ensureString(data, stack)
+    if (Array.isArray(data)) {
+      return ensureArray(data, ensureString, stack)
+    } else {
+      return ensureString(data, stack)
+    }
   }
 
   function validStyleFilter(data, stack) {
@@ -180,6 +184,7 @@ function validConsentJSON(data, stack) {
       type: validActionType,
       target: validTarget
     }, {
+      description: validDescription,
       parent: validTarget
     }, stack)
   }
@@ -188,7 +193,9 @@ function validConsentJSON(data, stack) {
     return ensureHas(data, {
       type: validActionType,
       actions: validActions
-    }, {}, stack)
+    }, {
+      description: validDescription
+    }, stack)
   }
 
   function validActions(data, stack) {
@@ -199,9 +206,19 @@ function validConsentJSON(data, stack) {
     return ensureHas(data, {
       type: validActionType,
       target: validTarget,
-      dragTarget: validTarget,
+      dragTarget: validDragTarget,
       axis: validAxis
-    }, {}, stack)
+    }, {
+      description: validDescription
+    }, stack)
+  }
+
+  function validDragTarget(data, stack) {
+    return ensureHas(data, {
+      target: validTarget
+    }, {
+      parent: validTarget
+    }, stack)
   }
 
   function validAxis(data, stack) {
@@ -213,6 +230,7 @@ function validConsentJSON(data, stack) {
       type: validActionType,
       target: validTarget
     }, {
+      description: validDescription,
       parent: validTarget,
       trueAction: validAction,
       falseAction: validAction
@@ -224,7 +242,9 @@ function validConsentJSON(data, stack) {
       type: validActionType,
       target: validTarget
     }, {
+      description: validDescription,
       parent: validTarget,
+      numRetries: validRetries,
       retries: validRetries,
       waitTime: validWaitTime,
       negated: validNegated
@@ -254,6 +274,7 @@ function validConsentJSON(data, stack) {
       type: validActionType,
       target: validTarget
     }, {
+      description: validDescription,
       parent: validTarget
     }, stack)
   }
@@ -261,14 +282,18 @@ function validConsentJSON(data, stack) {
   function validCloseAction(data, stack) {
     return ensureHas(data, {
       type: validActionType
-    }, { }, stack)
+    }, { 
+      description: validDescription
+    }, stack)
   }
 
   function validConsentAction(data, stack) {
     return ensureHas(data, {
       type: validActionType,
       consents: validConsents
-    }, { }, stack)
+    }, { 
+      description: validDescription
+    }, stack)
   }
 
   function validConsents(data, stack) {
@@ -278,8 +303,8 @@ function validConsentJSON(data, stack) {
   function validConsent(data, stack) {
     return ensureHas(data, {
       type: validConsentType,
-      description: validDescription
     }, {
+      description: validDescription,
       toggleAction: validAction,
       matcher: validMatcher,
       trueAction: validAction,
@@ -297,28 +322,33 @@ function validConsentJSON(data, stack) {
 
   function ensureHas(data, required, optional, stack) {
     const errors = [ ]
-    Object.keys(required).forEach( key => {
-      if (!data.hasOwnProperty(key)) {
-        errors.push([`Missing ${key}`, stack])
-      }
-    })
-    Object.keys(data).forEach( key => {
-      const subStack = [...stack, key]
-      const val = data[key]
-      if (required.hasOwnProperty(key)) {
-        const validator = required[key]
-        const subErrors = validator(val, subStack)
-        errors.push( ...subErrors )
-      } else if (optional) {
-        if (optional.hasOwnProperty(key)) {
-          const validator = optional[key]
+    try {
+      Object.keys(required).forEach( key => {
+        if (!data.hasOwnProperty(key) || data[key]===null || data[key]===undefined) {
+          errors.push([`Missing ${key}`, stack])
+        }
+      })
+      Object.keys(data).forEach( key => {
+        if (data[key]===null || data[key]===undefined) return
+        const subStack = [...stack, key]
+        const val = data[key]
+        if (required.hasOwnProperty(key)) {
+          const validator = required[key]
           const subErrors = validator(val, subStack)
           errors.push( ...subErrors )
-        } else {
-          errors.push([`Unknown property '${key}'`, stack])
+        } else if (optional) {
+          if (optional.hasOwnProperty(key)) {
+            const validator = optional[key]
+            const subErrors = validator(val, subStack)
+            errors.push( ...subErrors )
+          } else {
+            errors.push([`Unknown property '${key}'`, stack])
+          }
         }
-      }
-    })
+      })
+    } catch(e) {
+      errors.push(['Error in analyze', stack, data, required, optional])
+    }
     return errors
   }
 
