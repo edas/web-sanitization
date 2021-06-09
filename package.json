@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/edas/web-sanitization#readme",
   "devDependencies": {
-    "css-what": "^3.2.1",
+    "css-what": "^5.0.1",
     "jsonc": "^2.0.0",
     "prettier": "^1.19.1",
     "scalpel": "^3.0.0"
